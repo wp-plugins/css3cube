@@ -47,6 +47,7 @@
     wp.customize( 'css3cube_options[front_bg_color]', function( value ) {
         value.bind( function( newval ) {
             $( 'figure.front' ).css( 'background', newval );
+
         } );
     } );
     wp.customize( 'css3cube_options[back_bg_color]', function( value ) {
@@ -72,6 +73,18 @@
     wp.customize( 'css3cube_options[bottom_bg_color]', function( value ) {
         value.bind( function( newval ) {
             $( 'figure.bottom' ).css( 'background', newval );
+        } );
+    } );
+    //update CUBE side opacity
+    wp.customize( 'css3cube_options[cube_opacity]', function( value ) {
+        value.bind( function( newval ) {
+            $( 'figure.front' ).css( 'opacity', newval );
+            $( 'figure.back' ).css( 'opacity', newval );
+            $( 'figure.left' ).css( 'opacity', newval );
+            $( 'figure.right' ).css( 'opacity', newval );
+            $( 'figure.top' ).css( 'opacity', newval );
+            $( 'figure.bottom' ).css( 'opacity', newval );
+
         } );
     } );
 

@@ -3,7 +3,7 @@
  * Plugin Name: Css3 Cube
  * Plugin URI: https://github.com/fracalo/css3cube
  * Description: Integrates a cube-template for displaying page previews on front page in css3 cube fashion, configurable through the wp-customizer  .
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Fra Calo
  * Author URI:  http://ps13.org
  * License: GPL2
@@ -31,7 +31,7 @@ if ( !function_exists( 'add_action' ) ) {
     exit;
 }
 
-define( 'WPCSS3CUBE_VERSION', '1.0.0' );
+define( 'WPCSS3CUBE_VERSION', '1.0.1' );
 define( 'WPCSS3CUBE__MINIMUM_WP_VERSION', '4.1.0' );
 define( 'WPCSS3CUBE__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPCSS3CUBE__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
@@ -359,6 +359,37 @@ class CubeCustomizer {
             'section' => 'section_bottom',
             'settings'   => 'css3cube_options[bottom_bg_color]',
         ) ) );
+        /*cube opacity*/
+        $wp_customize->add_section( 'cube_opacity', array(
+            'title'          => __( 'Cube opacity', 'themename' ),
+            /*'description'    =>__('configure opacity of cube sides','themename' ),*/
+            'priority'       => 90,
+            'panel'  => 'panel_cube',
+        ) );
+
+        $wp_customize->add_setting( 'css3cube_options[cube_opacity]', array(
+            'type'           => 'option',
+            'capability'     => 'edit_theme_options',
+            'transport'      => 'postMessage',
+//            array(
+//                'sanitize_callback' => 'example_sanitize_integer',
+//            ),
+        ) );
+        $wp_customize->add_control( 'cube_opacity', array(
+            'type' => 'range',
+            'priority' => 10,
+            'settings'   => 'css3cube_options[cube_opacity]',
+            'section' => 'cube_opacity',
+            'label' => 'Range',
+            'description' => __('Configure opacity of cube sides','themename' ),
+            'input_attrs' => array(
+                'min' => 0,
+                'max' => 1,
+                'step' => 0.05 ,
+                'class' => 'test-class test',
+                'style' => 'color: #0a0000',
+            ),
+        ) );
     }
 
 /* adding postMessage script for live theme-customizer */
@@ -450,6 +481,8 @@ class CubeTemplater {
         return "$c";
     }
 
+
+
     /**
      * defining variable and sides
      */
@@ -472,9 +505,10 @@ class CubeTemplater {
         /*styling var*/
         $text_color=    (isset($cube_opt[$side.'_text_color'])) ? $cube_opt[$side.'_text_color'] : CubeTemplater::get_random_color() ;
         $bg_color=      (isset($cube_opt[$side.'_bg_color'])) ? $cube_opt[$side.'_bg_color'] : CubeTemplater::get_random_color();
+        $sides_opacity =(isset($cube_opt['cube_opacity'])) ? $cube_opt['cube_opacity'] : 1;
 
         $z= "
-        <figure class='$side_lit' style='background: " . $bg_color . " '>
+        <figure class='$side_lit' style='background: " . $bg_color . " ; opacity: " . $sides_opacity . " '>
             <article id='post-$p_side_id ' class='$side_lit' style='color: $text_color'>
                 <h2 id='post-$side' ><a href='$permalink' > $title</a></h2>
 

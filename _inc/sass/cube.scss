@@ -71,7 +71,9 @@ $screen-lg:                 1200px !default;
   transform-style: preserve-3d;
   transition: transform 1s;
   transform-origin: inherit;
-
+  a , a:-webkit-any-link{
+    color:inherit;
+  }
 
 
   figure {

@@ -110,7 +110,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: transform 1s;
   transform-origin: inherit;
 }
-/* line 77, sass/cube.scss */
+/* line 74, sass/cube.scss */
+.cube a, .cube a:-webkit-any-link {
+  color: inherit;
+}
+/* line 79, sass/cube.scss */
 .cube figure {
   display: block;
   width: 100%;
@@ -121,13 +125,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 2px solid #464646;
   overflow: hidden;
 }
-/* line 87, sass/cube.scss */
+/* line 89, sass/cube.scss */
 .cube figure:after {
   display: table;
   content: "";
   clear: both;
 }
-/* line 93, sass/cube.scss */
+/* line 95, sass/cube.scss */
 .cube figure article {
   margin: 4rem 3.5rem 6rem;
   overflow: hidden;
@@ -135,7 +139,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: calc( 100% - 10rem);
   width: calc( 100% - 7rem);
 }
-/* line 103, sass/cube.scss */
+/* line 105, sass/cube.scss */
 .cube figure article h2 {
   font-size: 30px;
   font-size: 3rem;
@@ -143,7 +147,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin: 1rem;
 }
 @media screen and (min-width: 480px) {
-  /* line 103, sass/cube.scss */
+  /* line 105, sass/cube.scss */
   .cube figure article h2 {
     font-size: 40px;
     font-size: 4rem;
@@ -151,7 +155,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 103, sass/cube.scss */
+  /* line 105, sass/cube.scss */
   .cube figure article h2 {
     font-size: 50px;
     font-size: 5rem;
@@ -159,14 +163,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 103, sass/cube.scss */
+  /* line 105, sass/cube.scss */
   .cube figure article h2 {
     font-size: 60px;
     font-size: 6rem;
     line-height: 1.4;
   }
 }
-/* line 117, sass/cube.scss */
+/* line 119, sass/cube.scss */
 .cube figure article span {
   font-size: 20px;
   font-size: 2rem;
@@ -179,7 +183,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 @media screen and (min-width: 480px) {
-  /* line 117, sass/cube.scss */
+  /* line 119, sass/cube.scss */
   .cube figure article span {
     font-size: 30px;
     font-size: 3rem;
@@ -187,7 +191,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 117, sass/cube.scss */
+  /* line 119, sass/cube.scss */
   .cube figure article span {
     font-size: 40px;
     font-size: 4rem;
@@ -195,7 +199,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 117, sass/cube.scss */
+  /* line 119, sass/cube.scss */
   .cube figure article span {
     font-size: 50px;
     font-size: 5rem;
@@ -204,11 +208,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /*buttons style have been reset in reset-section*/
-/* line 139, sass/cube.scss */
+/* line 141, sass/cube.scss */
 #options .show-buttons {
   box-sizing: content-box;
 }
-/* line 142, sass/cube.scss */
+/* line 144, sass/cube.scss */
 #options .show-buttons button.show-up {
   position: absolute;
   top: 5px;
@@ -222,7 +226,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden;
   z-index: 999;
 }
-/* line 155, sass/cube.scss */
+/* line 157, sass/cube.scss */
 #options .show-buttons button.show-up:after {
   content: "";
   display: block;
@@ -233,7 +237,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-right: 500px solid transparent;
   border-bottom: 500px solid #4679BD;
 }
-/* line 167, sass/cube.scss */
+/* line 169, sass/cube.scss */
 #options .show-buttons button.show-down {
   position: absolute;
   bottom: 5px;
@@ -247,7 +251,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden;
   z-index: 999;
 }
-/* line 181, sass/cube.scss */
+/* line 183, sass/cube.scss */
 #options .show-buttons button.show-down:after {
   content: "";
   display: block;
@@ -259,7 +263,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-right: 500px solid transparent;
   border-top: 500px solid #4679BD;
 }
-/* line 193, sass/cube.scss */
+/* line 195, sass/cube.scss */
 #options .show-buttons button.show-left {
   position: absolute;
   left: 5px;
@@ -274,7 +278,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden;
   z-index: 999;
 }
-/* line 207, sass/cube.scss */
+/* line 209, sass/cube.scss */
 #options .show-buttons button.show-left:after {
   content: "";
   display: block;
@@ -285,7 +289,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-bottom: 500px solid transparent;
   border-right: 500px solid #4679BD;
 }
-/* line 218, sass/cube.scss */
+/* line 220, sass/cube.scss */
 #options .show-buttons button.show-right {
   position: absolute;
   right: 5px;
@@ -301,7 +305,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden;
   z-index: 999;
 }
-/* line 232, sass/cube.scss */
+/* line 234, sass/cube.scss */
 #options .show-buttons button.show-right:after {
   content: "";
   display: block;
